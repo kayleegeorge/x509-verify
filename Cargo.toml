@@ -30,11 +30,15 @@ ecdsa = { version = "0.16.9", optional = true, default-features = false, feature
 k256 = { version = "0.13.3", optional = true, default-features = false, features = ["ecdsa"] }
 p192 = { version = "0.13.0", optional = true, default-features = false, features = ["ecdsa"] }
 p224 = { version = "0.13.2", optional = true, default-features = false, features = ["ecdsa"] }
-p256 = { version = "0.13.2", optional = true, default-features = false, features = ["ecdsa"] }
-p384 = { version = "0.13.0", optional = true, default-features = false, features = ["ecdsa"] }
 ed25519-dalek = { version = "2.1.0", optional = true, default-features = false }
 x509-cert = { version = "0.2.5", optional = true, default-features = false }
 x509-ocsp = { version = "0.2.1", optional = true, default-features = false }
+
+p256 = { git = "https://github.com/kayleegeorge/elliptic-curves.git", rev = "e158ce5", optional = true, default-features = false, features = ["ecdsa"] }
+p384 = { git = "https://github.com/kayleegeorge/elliptic-curves.git", rev = "e158ce5", optional = true, default-features = false, features = ["ecdsa"] }
+
+# p256 = { version = "0.13.2", optional = true, default-features = false, features = ["ecdsa"] }
+# p384 = { version = "0.13.0", optional = true, default-features = false, features = ["ecdsa"] }
 
 [dev-dependencies]
 x509-cert = { version = "0.2.4", default-features = false, features = ["pem"] }
@@ -61,3 +65,4 @@ std = ["x509-cert?/std"]
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
+
